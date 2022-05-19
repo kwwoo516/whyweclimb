@@ -1,0 +1,29 @@
+.container {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  width: auto;
+  height: auto; 
+}
+
+.uccVideo {
+  width: 700px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1vh;
+  gap: 2vw;
+}
+.btns input {
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+.closeBtn {
+  cursor: pointer;
+}

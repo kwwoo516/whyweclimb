@@ -1,0 +1,319 @@
+.multi {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10vh;
+}
+
+.multi button {
+  width: fit-content;
+  align-self: center;
+}
+
+.lobby {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* join 버튼 애니메이션 */
+
+.joinBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.joinBtn > div {
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #444;
+}
+
+.joinImg1 {
+  width: 140px;
+  height: 200px;
+  background: url("/images/dwarf2.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+  transform: translateX(-10%);
+}
+.joinImg2 {
+  width: 140px;
+  height: 200px;
+  background: url("/images/sourceror2.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1) translateX(-10%);
+}
+
+.joinBtn:hover h2 {
+  color: rgb(82, 82, 204);
+}
+.joinBtn:hover .joinImg1 {
+  background: url("/images/dwarf.png");
+  animation-name: cross1;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 2.5s;
+}
+.joinBtn:hover .joinImg2 {
+  background: url("/images/sourceror.png");
+  animation-name: cross2;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 2.5s;
+}
+@keyframes cross1 {
+  0%   { transform: skew(0)                scale(1, 1)      translateX(-15%)  translateY(0px); }
+  10%  { transform: skew(0)                scale(1.1,.9)    translateX(-10%)  translateY(0px); }
+  20%  { transform: skew(0)                scale(1, 1)      translateX(0%)   translateY(0px); }
+  25%  { transform: skew(-0.02turn, 0deg)  scale(1, 1)      translateX(5%)   translateY(-15%); }
+  50%  { transform: skew(-0.06turn, 14deg) scale(1, 1)      translateX(15%)   translateY(-20%); }
+  70%  { transform: skew(-0.06turn, 14deg) scale(1, 1)      translateX(15%)   translateY(-20%); }
+  85%  { transform: skew(-0.02turn, 0deg)  scale(1, 1)      translateX(9%)   translateY(-15%); }
+  95%  { transform: skew(0)                scale(1.05,.95)  translateX(0%)   translateY(0px); }
+  100% { transform: skew(0)                scale(1.05,.95)  translateX(-10%)   translateY(0px); }
+}
+@keyframes cross2 {
+  0%   { transform: skew(0)                scale(-1, 1)      translateX(-15%)  translateY(0px); }
+  10%  { transform: skew(0)                scale(-1.1,.9)    translateX(-10%)  translateY(0px); }
+  20%  { transform: skew(0)                scale(-1, 1)      translateX(0%)   translateY(0px); }
+  25%  { transform: skew(0.02turn,0deg)    scale(-1, 1)      translateX(5%)   translateY(-15%); }
+  50%  { transform: skew(0.06turn,-14deg)  scale(-1, 1)      translateX(15%)   translateY(-20%); }
+  70%  { transform: skew(0.06turn,-14deg)  scale(-1, 1)      translateX(15%)   translateY(-20%); }
+  85%  { transform: skew(0.02turn,0deg)    scale(-1, 1)      translateX(9%)   translateY(-15%); }
+  95%  { transform: skew(0)                scale(-1.05,.95)  translateX(0%)   translateY(0px); }
+  100% { transform: skew(0)                scale(-1.05,.95)  translateX(-10%)   translateY(0px); }
+}
+
+.spark {
+  width: 24em;
+  height: 24em;
+  transform: scale(.0, .0);
+  position: absolute;
+  top: -30%;
+  background-image: url("/images/spark.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+}
+.joinBtn:hover .spark {
+  animation-name: spark1;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 2.5s;
+}
+@keyframes spark1 {
+  0% { transform: scale(.0, .0) }
+  29% { transform: scale(.0, .0) }
+  30% { transform: scale(.1, .1) }
+  70% { transform: scale(.3, .3) }
+  75% { transform: scale(.2, .2) }
+  85% { transform: scale(.0, .0) }
+  100% { transform: scale(.0, .0) }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* find 버튼 애니메이션 */
+
+.findBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.findBtn > div {
+  width: 200px;
+  height: 203px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #444;
+}
+
+.findImg {
+  position: absolute;
+  width: 470px;
+  height: 310px;
+  background-image: url("/images/magnify.png");
+  background-repeat: no-repeat;
+  transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(0%)  translateY(0%);
+}
+
+.findBtn:hover .findImg {
+  animation: search;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+@keyframes search {
+  0%     { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(10%)   translateY(0%); } /*우하*/
+  6.25%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(15%)   translateY(-5%); } /*우*/
+  12.5%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(20%)   translateY(-10%); } /*우*/ 
+  18.75% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(20%)   translateY(-15%); } /*우상*/
+  25%    { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(20%)   translateY(-20%); } /*우상*/
+  31.25% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(15%)   translateY(-25%); } /*상*/
+  37.5%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(10%)   translateY(-25%); } /*상*/
+  43.75% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-0%)  translateY(-25%); } /*좌상*/
+  50%    { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-5%)  translateY(-25%); } /*좌상*/
+  56.25% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-10%)  translateY(-25%); } /*좌*/
+  62.5%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-15%)  translateY(-20%); } /*좌*/
+  68.75% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-15%)  translateY(-15%); } /*좌하*/
+  75%    { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-15%)    translateY(-10%); } /*좌하*/
+  81.25% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-10%)    translateY(-5%); } /*하*/
+  87.5%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(-5%)    translateY(0%); } /*하*/
+  93.75% { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(0%)    translateY(0%); } /*우하*/
+  100%   { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(10%)    translateY(0%); } /*우하*/
+}
+
+.blingSS {
+  width: 250px;
+  height: 200px;
+  transform: scale(.0, .0) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%);
+  position: absolute;
+  background-image: url("/images/bling_ss.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+}
+.blingS {
+  width: 250px;
+  height: 200px;
+  transform: scale(.0, .0) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%);
+  position: absolute;
+  background-image: url("/images/bling_s.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+}
+.blingM {
+  width: 300px;
+  height: 300px;
+  transform: scale(.0, .0) skew(0.12turn, -45deg) translateX(125%) translateY(90%);
+  position: absolute;
+  background-image: url("/images/bling_m.png");
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+}
+.findBtn:hover .blingSS {
+  animation-name: bling1;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 1.5s;
+}
+.findBtn:hover .blingS {
+  animation-name: bling2;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 1.2s;
+}
+.findBtn:hover .blingM {
+  animation-name: bling3;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 1.5s;
+}
+.findBtn:hover h2 {
+  color: rgb(82, 82, 204);
+}
+
+@keyframes bling1 {
+  0%   { transform: scale(.0, .0) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  15%  { transform: scale(.1, .1) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  30%  { transform: scale(.2, .2) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  45%  { transform: scale(.25, .25) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  60%  { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  75%  { transform: scale(.25, .25) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  90%  { transform: scale(.2, .2) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+  100% { transform: scale(.1, .1) skew(-0.12turn, 45deg) translateX(30%) translateY(-150%) }
+}
+@keyframes bling2 {
+  0%   { transform: scale(.3, .3) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  15%  { transform: scale(.25, .25) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  30%  { transform: scale(.2, .2) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  45%  { transform: scale(.1, .1) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  60%  { transform: scale(.0, .0) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  75%  { transform: scale(.1, .1) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  90%  { transform: scale(.2, .2) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+  100% { transform: scale(.25, .25) skew(-0.12turn, 45deg) translateX(90%) translateY(-260%) }
+}
+@keyframes bling3 {
+  0%   { transform: scale(.0, .0) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  15%  { transform: scale(.15, .15) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  30%  { transform: scale(.2, .2) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  45%  { transform: scale(.15, .15) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  60%  { transform: scale(.1, .1) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  75%  { transform: scale(.0, .0) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  90%  { transform: scale(.1, .1) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+  100% { transform: scale(.0, .0) skew(0.12turn, -45deg) translateX(125%) translateY(90%) }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* create 버튼 애니메이션 */
+
+.createBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.createBtn > div {
+  width: 200px;
+  height: 203px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #444;
+}
+
+.createImg1 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  background-image: url("/images/createBtnImg/furnace_0.png");
+  background-repeat: no-repeat;
+  transform: scale(.4, .4) scaleX(-1) translateX(0%)  translateY(-8%);
+}
+
+.createBtn:hover .createImg1 {
+  animation-name: fire;
+  animation-iteration-count: infinite;
+  /* animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1); */
+  animation-duration: 1s;
+}
+.createBtn:hover h2 {
+  color: rgb(82, 82, 204);
+}
+
+@keyframes fire {
+  14.3% { background-image: url("/images/createBtnImg/furnace_1.png") ; }
+  28.6% { background-image: url("/images/createBtnImg/furnace_2.png") ; }
+  42.9% { background-image: url("/images/createBtnImg/furnace_3.png") ; }
+  57.2% { background-image: url("/images/createBtnImg/furnace_4.png") ; }
+  71.5% { background-image: url("/images/createBtnImg/furnace_5.png") ; }
+  85.8% { background-image: url("/images/createBtnImg/furnace_6.png") ; }
+  100%  { background-image: url("/images/createBtnImg/furnace_7.png") ; }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 뒤로가기 버튼 */
+.back{
+  background: #8d6e63;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 6px 0px #6d4c41; 
+  display: inline-block;
+  transition: all .1s;
+  position: relative;
+  top: 1.4vh;
+  cursor: pointer;
+  font-size: medium;
+  padding: 5px 3vw;
+}
+.back:active {
+  top: 1.6vh;
+  box-shadow: 0 2px 0px #6d4c41;
+  transition: all .1s;
+}

@@ -1,0 +1,504 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: url("/images/stars.svg");
+  background-color: #8a8a8a;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* characters */
+.players img {
+  position: absolute;
+}
+
+.player1 {
+  z-index: 2;
+  left: 18vw;
+  top: -15vh;
+  opacity: .85;
+  transform: scale(.8) rotate(-115deg);
+  animation-name: entrance1, hovering1;
+  animation-fill-mode: forwards;
+  animation-delay: .5s, 8.5s;
+  animation-duration: 8s, 6s;
+  animation-iteration-count: 1, infinite;
+}
+.player2 {
+  transform: scale(1.2) rotate(75deg);
+  z-index: 3;
+  left: 40vw;
+  top: -15vh;
+  animation-name: entrance2, hovering2;
+  animation-fill-mode: forwards;
+  animation-delay: 1s, 4s;
+  animation-duration: 3s, 4s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease-in-out;
+}
+.player3 {
+  transform: scale(.5) scaleX(-1) rotate(-130deg);
+  z-index: 2;
+  left: 60vw;
+  top: -15vh;
+  opacity: .7;
+  animation-name: entrance3, hovering3;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 10s;
+  animation-duration: 10s, 7s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease-in-out;
+}
+.player4 {
+  transform: rotate(87deg);
+  z-index: 2;
+  left: 70vw;
+  top: -15vh;
+
+  animation-name: entrance4, hovering4;
+  animation-fill-mode: forwards;
+  animation-delay: 2s, 6s;
+  animation-duration: 4s, 5s;
+  animation-iteration-count: 1, infinite;
+}
+
+@keyframes entrance1 {
+  0%   { transform: translateY(-15vh) scale3d(.73, .73, .8)  rotate(-115deg); }
+  100% { transform: translateY(50vh)  scale3d(.73, 0.73, .8) rotate(-115deg); }
+}
+@keyframes entrance2 {
+  0%   { transform: translateY(-15vh) scale3d(1.16, 1.16, -1) rotate(75deg); }
+  100% { transform: translateY(68vh)  scale3d(1.16, 1.16, 1)  rotate(75deg); }
+}
+@keyframes entrance3 {
+  0%   { transform: translateY(-15vh) scale3d(.46, .46, -1) scaleX(-1) rotate(-130deg); }
+  100% { transform: translateY(75vh)  scale3d(.46, .46, 1)  scaleX(-1) rotate(-130deg); }
+}
+@keyframes entrance4 {
+  0%   { transform: translateY(-15vh) scale3d(1, 1, -1) scaleX(-1) rotate(87deg); }
+  100% { transform: translateY(60vh)  scale3d(1, 1, 1)  scaleX(-1) rotate(87deg); }
+}
+
+@keyframes hovering1 {
+  0%   { transform: translateY(50vh) scale3d(.73, .73, .8) rotate(-115deg); }
+  20%  { transform: translateY(51vh) scale3d(.78, .78, .8) rotate(-117deg); }
+  40%  { transform: translateY(50vh) scale3d(.75, .75, .8) rotate(-115deg); }
+  60%  { transform: translateY(50vh) scale3d(.80, .80, .8) rotate(-113deg); }
+  80%  { transform: translateY(49vh) scale3d(.78, .78, .8) rotate(-115deg); }
+  100% { transform: translateY(50vh) scale3d(.73, .73, .8) rotate(-115deg); }
+}
+@keyframes hovering2 {
+  0%   { transform: translateY(68vh) scale3d(1.16, 1.16, -1) rotate(75deg); }
+  20%  { transform: translateY(69vh) scale3d(1.1, 1.1, -1)   rotate(77deg); }
+  40%  { transform: translateY(68vh) scale3d(1.08, 1.08, -1) rotate(75deg); }
+  60%  { transform: translateY(68vh) scale3d(1.15, 1.15, 1)  rotate(73deg); }
+  80%  { transform: translateY(67vh) scale3d(1.11, 1.11, 1)  rotate(75deg); }
+  100% { transform: translateY(68vh) scale3d(1.16, 1.16, 1)  rotate(75deg); }
+}
+@keyframes hovering3 {
+  0%   { transform: translateY(75vh) scale3d(0.46, 0.46, 1) scaleX(-1) rotate(-130deg); }
+  20%  { transform: translateY(74vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-132deg); }
+  40%  { transform: translateY(75vh) scale3d(0.54, 0.54, 1) scaleX(-1) rotate(-130deg); }
+  60%  { transform: translateY(76vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-128deg); }
+  80%  { transform: translateY(74vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-130deg); }
+  100% { transform: translateY(75vh) scale3d(0.46, 0.46, 1) scaleX(-1) rotate(-130deg); }
+}
+@keyframes hovering4 {
+  0%   { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+  20%  { transform: translateY(59vh) scale3d(.96, .96, 1)   scaleX(-1) rotate(89deg); }
+  40%  { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+  60%  { transform: translateY(61vh) scale3d(1.03, 1.03, 1) scaleX(-1) rotate(85deg); }
+  80%  { transform: translateY(59vh) scale3d(.97, .97, 1)   scaleX(-1) rotate(87deg); }
+  100% { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* wind effect */
+
+.wind1 {
+  position: absolute;
+  left: 10vw;
+  top: 105vh;
+  width: 3vw;
+  height: 30vh;
+  z-index: 6;
+  background-color: white;
+  filter: blur(30px);
+  opacity: .2;
+  animation: fallWindAnimation 3.5s infinite ;
+}
+.wind2 {
+  position: absolute;
+  left: 20vw;
+  top: 105vh;
+  width: 5vw;
+  height: 55vh;
+  z-index: 2;
+  background-color: white;
+  filter: blur(50px);
+  opacity: .2;
+  animation: fallWindAnimation 3.7s infinite ;
+  animation-delay: .5s;
+}
+.wind3 {
+  position: absolute;
+  left: 32vw;
+  top: 105vh;
+  width: 3vw;
+  height: 28vh;
+  z-index: 6;
+  background-color: white;
+  filter: blur(30px);
+  opacity: .2;
+  animation: fallWindAnimation 3.7s infinite ;
+}
+.wind4 {
+  position: absolute;
+  left: 34vw;
+  top: 105vh;
+  width: 3.7vw;
+  height: 45vh;
+  z-index: 2;
+  background-color: white;
+  filter: blur(40px);
+  opacity: .2;
+  animation: fallWindAnimation 3.4s infinite ;
+  animation-delay: .5s;
+}
+.wind5 {
+  position: absolute;
+  left: 43vw;
+  top: 105vh;
+  width: 3.5vw;
+  height: 50vh;
+  z-index: 6;
+  background-color: white;
+  filter: blur(40px);
+  opacity: .2;
+  animation: fallWindAnimation 3.5s infinite ;
+}
+.wind6 {
+  position: absolute;
+  left: 53vw;
+  top: 105vh;
+  width: 4vw;
+  height: 32vh;
+  z-index: 2;
+  background-color: white;
+  filter: blur(30px);
+  opacity: .2;
+  animation: fallWindAnimation 3.3s infinite ;
+  animation-delay: .5s;
+}
+.wind7 {
+  position: absolute;
+  left: 63vw;
+  top: 105vh;
+  width: 5vw;
+  height: 60vh;
+  z-index: 6;
+  background-color: white;
+  filter: blur(50px);
+  opacity: .2;
+  animation: fallWindAnimation 3.7s infinite ;
+}
+.wind8 {
+  position: absolute;
+  left: 75vw;
+  top: 105vh;
+  width: 4vw;
+  height: 25vh;
+  z-index: 2;
+  background-color: white;
+  filter: blur(30px);
+  opacity: .2;
+  animation: fallWindAnimation 3.5s infinite ;
+  animation-delay: .5s;
+}
+.wind9 {
+  position: absolute;
+  left: 77vw;
+  top: 105vh;
+  width: 3.7vw;
+  height: 45vh;
+  z-index: 6;
+  background-color: white;
+  filter: blur(40px);
+  opacity: .2;
+  animation: fallWindAnimation 3.3s infinite ;
+}
+.wind10 {
+  position: absolute;
+  left: 86vw;
+  top: 105vh;
+  width: 4vw;
+  height: 55vh;
+  z-index: 2;
+  background-color: white;
+  filter: blur(50px);
+  opacity: .2;
+  animation: fallWindAnimation 3.6s infinite ;
+  animation-delay: .5s;
+}
+
+@keyframes fallWindAnimation {
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-120vh); }
+}
+@-o-keyframes fallWindAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-200vh); }
+}
+@-moz-keyframes fallWindAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-200vh); }
+}
+@-webkit-keyframes fallWindAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-200vh); }
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* closest clouds */
+
+@keyframes fastestFallAnimation {
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-170vh); }
+}
+@-o-keyframes fastestFallAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-170vh); }
+}
+@-moz-keyframes fastestFallAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-170vh); }
+}
+@-webkit-keyframes fastestFallAnimation{
+  0%   {  transform: translatey(0%); }
+  96%  {  transform: translatey(0%); }
+  100% {  transform: translatey(-170vh); }
+}
+
+.closestCloud1 {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  width: 30vw;
+   -webkit-animation: fastestFallAnimation 10s infinite;
+   -moz-animation: fastestFallAnimation 10s infinite;
+   -o-animation: fastestFallAnimation 10s infinite;
+    animation: fastestFallAnimation 10s infinite;
+    animation-delay: 1s;
+  z-index: 6;
+  filter: blur(20px);
+}
+.closestCloud2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 20vw;
+   -webkit-animation: fastestFallAnimation 10s infinite;
+   -moz-animation: fastestFallAnimation 10s infinite;
+   -o-animation: fastestFallAnimation 10s infinite;
+    animation: fastestFallAnimation 10s infinite;
+    animation-delay: 1.1s;
+  z-index: 6;
+  filter: blur(20px);
+}
+.closestCloud3 {
+  position: absolute;
+  top: 100%;
+  left: 75%;
+  width: 50vw;
+   -webkit-animation: fastestFallAnimation 8s infinite;
+   -moz-animation: fastestFallAnimation 8s infinite;
+   -o-animation: fastestFallAnimation 8s infinite;
+    animation: fastestFallAnimation 8s infinite;
+    animation-delay: 0s;
+  z-index: 6;
+  filter: blur(20px);
+}
+.closestCloud4 {
+  position: absolute;
+  top: 100%;
+  left: -5%;
+  width: 40vw;
+   -webkit-animation: fastestFallAnimation 9s infinite;
+   -moz-animation: fastestFallAnimation 9s infinite;
+   -o-animation: fastestFallAnimation 9s infinite;
+    animation: fastestFallAnimation 9s infinite;
+    animation-delay: 1s;
+  z-index: 6;
+  filter: blur(20px);
+}
+.closestCloud5 {
+  position: absolute;
+  top: 100%;
+  left: 8%;
+  width: 30vw;
+   -webkit-animation: fastestFallAnimation 7s infinite;
+   -moz-animation: fastestFallAnimation 7s infinite;
+   -o-animation: fastestFallAnimation 7s infinite;
+    animation: fastestFallAnimation 7s infinite;
+    animation-delay: -4s;
+  z-index: 6;
+  filter: blur(20px);
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* close clouds */
+
+@keyframes fastFallAnimation {
+  0%   {  transform: translatey(0%); }
+  100% {  transform: translatey(-170vh); }
+}
+@-o-keyframes fastFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-170vh); }
+}
+@-moz-keyframes fastFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-170vh); }
+}
+@-webkit-keyframes fastFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-170vh); }
+}
+
+.closeCloud1 {
+  position: absolute;
+  top: 130%;
+  left: 10%;
+  opacity: .8;
+  width: 15vw;
+   -webkit-animation: fastFallAnimation 3s infinite;
+   -moz-animation: fastFallAnimation 3s infinite;
+   -o-animation: fastFallAnimation 3s infinite;
+    animation: fastFallAnimation 3s infinite;
+    animation-delay: 0s;
+  z-index: 1;
+  filter: blur(1px);
+}
+.closeCloud2 {
+  position: absolute;
+  top: 130%;
+  left: 60%;
+  opacity: .8;
+  width: 10vw;
+   -webkit-animation: fastFallAnimation 4s infinite;
+   -moz-animation: fastFallAnimation 4s infinite;
+   -o-animation: fastFallAnimation 4s infinite;
+    animation: fastFallAnimation 4s infinite;
+    animation-delay: 1.2s;
+  z-index: 1;
+  filter: blur(1px);
+}
+.closeCloud3 {
+  position: absolute;
+  top: 130%;
+  left: 65%;
+  opacity: .8;
+  width: 20vw;
+   -webkit-animation: fastFallAnimation 3.5s infinite;
+   -moz-animation: fastFallAnimation 3.5s infinite;
+   -o-animation: fastFallAnimation 3.5s infinite;
+    animation: fastFallAnimation 3.5s infinite;
+    animation-delay: 1s;
+  z-index: 1;
+  filter: blur(1px);
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* far clouds */
+
+@keyframes slowFallAnimation {
+  0%   {  transform: translatey(0%); }
+  100% {  transform: translatey(-130vh); }
+}
+@-o-keyframes slowFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-130vh); }
+}
+@-moz-keyframes slowFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-130vh); }
+}
+@-webkit-keyframes slowFallAnimation{
+  0%   {  transform: translatey(0px); }
+  100% {  transform: translatey(-130vh); }
+}
+
+.farCloud1 {
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  opacity: .2;
+  width: 10vw;
+   -webkit-animation: slowFallAnimation 66s infinite;
+   -moz-animation: slowFallAnimation 66s infinite;
+   -o-animation: slowFallAnimation 66s infinite;
+    animation: slowFallAnimation 66s infinite;
+  z-index: 0;
+}
+.farCloud2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  opacity: .2;
+  width: 6vw;
+   -webkit-animation: slowFallAnimation 70s infinite;
+   -moz-animation: slowFallAnimation 70s infinite;
+   -o-animation: slowFallAnimation 70s infinite;
+    animation: slowFallAnimation 70s infinite;
+    animation-delay: -17s;
+  z-index: 0;
+}
+.farCloud3 {
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  opacity: .2;
+  width: 15vw;
+   -webkit-animation: slowFallAnimation 68s infinite;
+   -moz-animation: slowFallAnimation 68s infinite;
+   -o-animation: slowFallAnimation 68s infinite;
+    animation: slowFallAnimation 68s infinite;
+    animation-delay: -12s;
+  z-index: 0;
+}
+.farCloud4 {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  opacity: .2;
+  width: 10vw;
+   -webkit-animation: slowFallAnimation 65s infinite;
+   -moz-animation: slowFallAnimation 65s infinite;
+   -o-animation: slowFallAnimation 65s infinite;
+    animation: slowFallAnimation 65s infinite;
+    animation-delay: -33s;
+  z-index: 0;
+}
+
+.container h2 {
+  position: absolute;
+  z-index: 0;
+}

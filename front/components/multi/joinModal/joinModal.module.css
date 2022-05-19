@@ -1,0 +1,148 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #9a9898;
+  border-radius: 30px;
+  border: 8px solid #eaeaea;
+}
+.modal h2 {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.card {
+  padding: 2em;
+  padding-left: 4em;
+  margin: 1rem 2.5rem;
+  width: 30em;
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+  justify-content: center;
+  align-self: center;
+  overflow: hidden;
+  font-size: large;
+  border: 3px solid #eaeaea;
+  border-radius: 10px;
+}
+.card span {
+  display: flex;
+  align-items: center;
+}
+.card div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 3em;
+}
+.card label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+  width: 5vw;
+  align-items: center;
+}
+.card input {
+    width: 2em;
+    height: 2em;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5em 0;
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* buttons */
+
+.okBtn {
+  background: #5EA5DD;
+  font-size: 20px;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 6px 0px #3672a0;
+  display: inline-block;
+  transition: all .1s;
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+  margin: 0 3vw;
+
+  font-size: medium;
+  padding: 5px 20px;
+  margin-top: -1vh;
+}
+.okBtn:active {
+  top: 3px;
+  box-shadow: 0 2px 0px #3672a0;
+  transition: all .1s;
+}
+
+.backBtn {
+  background: #8d6e63;
+  font-size: 10px;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 6px 0px #6d4c41; 
+  display: inline-block;
+  transition: all .1s;
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+  margin:1vh 3vw;
+  margin-bottom: .5vh;
+
+  font-size: medium;
+  padding: 5px 20px;
+  margin-top: -1vh;
+}
+.backBtn:active {
+  top: 3px;
+  box-shadow: 0 2px 0px #6d4c41;
+  transition: all .1s;
+}
+
+.fonts{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.smallfonts{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ------------------------------------ responsive design ↓ --------------------------------------- */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

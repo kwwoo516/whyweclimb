@@ -1,0 +1,278 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+  }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:rgba(0, 0, 0, .5);
+  /* Backdrop 컴포넌트의 자식 컴포넌트인 ProductModal을 화면 중앙에 배치하기 위함 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+
+/* --------------------------------------------------------------------------------------- */
+/* video */
+
+/* .video-js {
+  width: 700px;
+  height:auto;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 6;
+} */
+
+
+/* -------------------------------------------------------------------------------------- */
+
+.intro {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+.image-box{
+  
+  width:550px;
+  height:440px;
+  overflow:hidden;
+  margin:0 auto;
+  align-items:bottom;
+}
+.intro-image{
+  
+  width:100%;
+  position:relative;
+  bottom:3077px;
+  object-fit:cover;
+  animation-name: climb;
+  animation-duration : 8s;
+  
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+  animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes climb{
+  0% {
+    bottom: 3077px;
+  }
+  100%{
+    bottom: 0px;
+  }
+}
+
+#mute {
+  float: right;
+  /* margin-top: 40px; */
+  margin-left: 20px;
+  display: inline;
+}
+
+#cvs {
+  border: 2px solid black;
+  margin: 0px 28px
+}
+
+/* ***************************************************************************** */
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; transform: translatey(0px); }
+  50%  { opacity:0.5; transform: translatey(-20px); }
+  100% { opacity:1; transform: translatey(0px); }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; transform: translatey(0px); }
+  50%  { opacity:0.5; transform: translatey(-20px); }
+  100% { opacity:1; transform: translatey(0px); }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; transform: translatey(0px); }
+  50%  { opacity:0.5; transform: translatey(-20px); }
+  100% { opacity:1; transform: translatey(0px); }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; transform: translatey(0px); }
+  50%  { opacity:0.5; transform: translatey(-20px); }
+  100% { opacity:1; transform: translatey(0px); }
+}
+.animate-flicker1 {
+   -webkit-animation: flickerAnimation 6s ease-in-out infinite;
+   -moz-animation: flickerAnimation 6s ease-in-out infinite;
+   -o-animation: flickerAnimation 6s ease-in-out infinite;
+    animation: flickerAnimation 6s ease-in-out infinite;
+}
+.animate-flicker2 {
+  -webkit-animation: flickerAnimation 4s ease-in-out infinite;
+  -moz-animation: flickerAnimation 4s ease-in-out infinite;
+  -o-animation: flickerAnimation 4s ease-in-out infinite;
+   animation: flickerAnimation 4s ease-in-out infinite;
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* multi/waitingRoom css */
+
+.playerInfo1 {
+  position: absolute;
+  left: 18vw;
+  top: 30vh;
+  animation: appear 1s forwards ease-in;
+  opacity: 0;
+  animation-delay: 4.1s;
+}
+.playerInfo2 {
+  position: absolute;
+  left: 37vw;
+  top: 45vh;
+  animation: appear 1s forwards ease-in;
+  opacity: 0;
+  animation-delay: 3s;
+}
+.playerInfo3 {
+  position: absolute;
+  left: 58vw;
+  top: 55vh;
+  animation: appear 1s forwards ease-in;
+  opacity: 0;
+  animation-delay: 4s;
+}
+.playerInfo4 {
+  position: absolute;
+  left: 70vw;
+  top: 38vh;
+  animation: appear 1s forwards ease-in;
+  opacity: 0;
+  animation-delay: 4.5s;
+}
+@keyframes appear {
+  0% { opacity: 0; }
+  80% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.player1 {
+  position: absolute;
+  z-index: 2;
+  left: 18vw;
+  top: -15vh;
+  opacity: .85;
+  transform: scale(.8) rotate(-115deg);
+  animation-name: entrance1, hovering1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.1s, 4.1s;
+  animation-duration: 3s, 6s;
+  animation-iteration-count: 1, infinite;
+}
+.player2 {
+  position: absolute;
+  transform: scale(1.2) rotate(75deg);
+  z-index: 4;
+  left: 38vw;
+  top: -15vh;
+  animation-name: entrance2, hovering2;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 3s;
+  animation-duration: 3s, 4s;
+  animation-iteration-count: 1, infinite;
+}
+.player3 {
+  position: absolute;
+  transform: scale(.5) scaleX(-1) rotate(-130deg);
+  z-index: 2;
+  left: 58vw;
+  top: -15vh;
+  opacity: .7;
+  animation-name: entrance3, hovering3;
+  animation-fill-mode: forwards;
+  animation-delay: 1s, 4s;
+  animation-duration: 3s, 7s;
+  animation-iteration-count: 1, infinite;
+}
+.player4 {
+  position: absolute;
+  transform: rotate(87deg);
+  z-index: 4;
+  left: 70vw;
+  top: -15vh;
+  animation-name: entrance4, hovering4;
+  animation-fill-mode: forwards;
+  animation-delay: 1s, 4.5s;
+  animation-duration: 3.5s, 5s;
+  animation-iteration-count: 1, infinite;
+  
+}
+
+@keyframes entrance1 {
+  0%   { transform: translateY(-15vh) scale3d(.73, .73, .8)  rotate(-115deg); }
+  100% { transform: translateY(50vh)  scale3d(.73, 0.73, .8) rotate(-115deg); }
+}
+@keyframes entrance2 {
+  0%   { transform: translateY(-15vh) scale3d(1.16, 1.16, -1) rotate(75deg); }
+  100% { transform: translateY(68vh)  scale3d(1.16, 1.16, 1)  rotate(75deg); }
+}
+@keyframes entrance3 {
+  0%   { transform: translateY(-15vh) scale3d(.46, .46, -1) scaleX(-1) rotate(-130deg); }
+  100% { transform: translateY(75vh)  scale3d(.46, .46, 1)  scaleX(-1) rotate(-130deg); }
+}
+@keyframes entrance4 {
+  0%   { transform: translateY(-15vh) scale3d(1, 1, -1) scaleX(-1) rotate(87deg); }
+  100% { transform: translateY(60vh)  scale3d(1, 1, 1)  scaleX(-1) rotate(87deg); }
+}
+
+@keyframes hovering1 {
+  0%   { transform: translateY(50vh) scale3d(.73, .73, .8) rotate(-115deg); }
+  20%  { transform: translateY(51vh) scale3d(.78, .78, .8) rotate(-117deg); }
+  40%  { transform: translateY(50vh) scale3d(.75, .75, .8) rotate(-115deg); }
+  60%  { transform: translateY(50vh) scale3d(.80, .80, .8) rotate(-113deg); }
+  80%  { transform: translateY(49vh) scale3d(.78, .78, .8) rotate(-115deg); }
+  100% { transform: translateY(50vh) scale3d(.73, .73, .8) rotate(-115deg); }
+}
+@keyframes hovering2 {
+  0%   { transform: translateY(68vh) scale3d(1.16, 1.16, -1) rotate(75deg); }
+  20%  { transform: translateY(69vh) scale3d(1.1, 1.1, -1)   rotate(77deg); }
+  40%  { transform: translateY(68vh) scale3d(1.08, 1.08, -1) rotate(75deg); }
+  60%  { transform: translateY(68vh) scale3d(1.15, 1.15, 1)  rotate(73deg); }
+  80%  { transform: translateY(67vh) scale3d(1.11, 1.11, 1)  rotate(75deg); }
+  100% { transform: translateY(68vh) scale3d(1.16, 1.16, 1)  rotate(75deg); }
+}
+@keyframes hovering3 {
+  0%   { transform: translateY(75vh) scale3d(0.46, 0.46, 1) scaleX(-1) rotate(-130deg); }
+  20%  { transform: translateY(74vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-132deg); }
+  40%  { transform: translateY(75vh) scale3d(0.54, 0.54, 1) scaleX(-1) rotate(-130deg); }
+  60%  { transform: translateY(76vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-128deg); }
+  80%  { transform: translateY(74vh) scale3d(.5, .5, 1)     scaleX(-1) rotate(-130deg); }
+  100% { transform: translateY(75vh) scale3d(0.46, 0.46, 1) scaleX(-1) rotate(-130deg); }
+}
+@keyframes hovering4 {
+  0%   { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+  20%  { transform: translateY(59vh) scale3d(.96, .96, 1)   scaleX(-1) rotate(89deg); }
+  40%  { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+  60%  { transform: translateY(61vh) scale3d(1.03, 1.03, 1) scaleX(-1) rotate(85deg); }
+  80%  { transform: translateY(59vh) scale3d(.97, .97, 1)   scaleX(-1) rotate(87deg); }
+  100% { transform: translateY(60vh) scale3d(1, 1, 1)       scaleX(-1) rotate(87deg); }
+}

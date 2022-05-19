@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  margin-bottom: 6vh;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  z-index: 6;
+  margin-left: 6vw;
+}
+/* .btnBack {
+  margin-top: 2em;
+  width: fit-content;
+  align-self: center;
+} */
+
+.btnBack{
+  background: #8d6e63;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 6px 0px #6d4c41; 
+  display: inline-block;
+  transition: all .1s;
+  position: relative;
+  top: 1.4vh;
+  cursor: pointer;
+  font-size: medium;
+  padding: 5px 3vw;
+  margin-top: 5em;
+  width: fit-content;
+  align-self: center;
+}
+.btnBack:active {
+  top: 1.6vh;
+  box-shadow: 0 2px 0px #6d4c41;
+  transition: all .1s;
+}
+.selectBtn {
+  font-size:20px;
+  width: fit-content;
+  text-align: center;
+  align-self: center;
+  -webkit-animation: glowDark 1s ease-in-out infinite alternate;
+  -moz-animation: glowDark 1s ease-in-out infinite alternate;
+  animation: glowDark 1s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+/* ------------------------------------------------------------------------------------ */
+/* 캐릭터 점프 애니매이션 */
+/* 싱글모드 */
+.stage {
+  border-bottom: 3px solid #444;
+  display: flex;
+  height: 300px;
+  width: 90%;
+}
+
+.box {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  height: 125px;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 125px;
+}
+
+.btn:hover .bounce7 {
+  animation-name: bounce7;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+/* 멀티모드 */
+.stage1 {
+  border-bottom: 3px solid #444;
+  display: flex;
+  height: 300px;
+  width: 90%;
+}
+
+.box1 {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  height: 150px;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 150px;
+}
+
+.btn1:hover .bounce1 {
+  animation-name: bounce7;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+.btn1:hover .bounce2 {
+  animation-name: bounce7;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 2.5s;
+}
+.btn1:hover .bounce3 {
+  animation-name: bounce7;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 1.5s;
+}
+@keyframes bounce7 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-100px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* 텍스트 glowing 애니메이션 */
+.container a:hover {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+.container h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 7px #e60073, 0 0 10px #e60073, 0 0 17px #e60073, 0 0 15px #e60073, 0 0 17px #e60073;
+  }
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 7px rgb(47, 219, 133), 0 0 10px rgb(82, 82, 204), 0 0 12px rgb(213, 246, 84), 0 0 15px rgb(82, 82, 204), 0 0 17px rgb(82, 82, 204), 0 0 20px rgb(82, 82, 204);
+  }
+}
+
+@-webkit-keyframes glowDark {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 7px #ff4f4f, 0 0 10px #ff67b3, 0 0 17px #fb6cf9, 0 0 15px #8974fd, 0 0 17px #84ffa4;
+  }
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 7px rgb(47, 219, 133), 0 0 10px rgb(82, 82, 204), 0 0 12px rgb(213, 246, 84), 0 0 15px rgb(110, 248, 255), 0 0 17px rgb(255, 128, 156), 0 0 20px rgb(100, 247, 255);
+  }
+}
+

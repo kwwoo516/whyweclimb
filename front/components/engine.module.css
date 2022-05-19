@@ -1,0 +1,21 @@
+/* .gameScreen {
+  display:flex;
+} */
+.resultText {
+  text-align: center;
+}
+
+.buttons {
+  display:flex;
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.h3button {
+  margin: 0px 400px;
+}
+
+.replayBtn {
+  cursor: pointer;
+}

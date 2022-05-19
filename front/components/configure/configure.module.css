@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container h2:hover {
+  color: rgb(82, 82, 204);
+  cursor: pointer;
+}
