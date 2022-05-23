@@ -105,6 +105,8 @@
 
 [피그마](https://www.figma.com/file/5ZuRhHHbmY3zTjiBFekLZD/Why-we-Climb%3F?node-id=0%3A1)
 
+[ERD](https://www.notion.so/ERD-f4c2842d1a9a4efd805611dd2bb2bd6a)
+
 [페이지 명세서](https://www.notion.so/b4c17f0db26a42d1a9f28a6645283855)
 
 [포팅 메뉴얼](https://www.notion.so/6c4d10bdaefe4a0ba29658dc655505cf)
