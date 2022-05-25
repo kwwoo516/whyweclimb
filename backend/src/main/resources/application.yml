@@ -14,8 +14,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://k6a401.p.ssafy.io:3306/whyweclimb?serverTimezone=UTC&characterEncoding=UTF-8
-    username: climb_dev
-    password: climb401
+    username: 
+    password: 
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
